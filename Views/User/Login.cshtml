@@ -1,0 +1,33 @@
+﻿@model LoginViewModel
+
+<html>
+<head>
+   
+</head>
+    <body>
+        <form asp-controller="User" asp-action="Login" method="post">
+            <div class="form-outline mb-4">
+                <input type="email" id="form1Example13" class="form-control form-control-lg" asp-for="Email" />
+                <label class="form-label" for="form1Example13" asp-for="Email">Email address</label>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-outline mb-4">
+                <input type="password" id="form1Example23" class="form-control form-control-lg" asp-for="Password" />
+                <label class="form-label" for="form1Example23" asp-for="Password">Password</label>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div>
+                <h5 style="color:red">@TempData["WrongCredential"]</h5>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+    
+            <div class="divider d-flex align-items-center my-4">
+                <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+            </div>
+    
+            <a class="btn btn-primary" asp-controller="Account" asp-action="Add" method="get">Create New Account</a>
+    
+    
+        </form>
+    </body>
+</html>
